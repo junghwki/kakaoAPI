@@ -4,13 +4,15 @@ import getToken from "./query/getToken";
 import { useMutation } from "react-query";
 import { useDispatch } from "react-redux";
 import { setTokenAction } from "./redux/action";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const KakaoRedirectHandler = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const mutation = useMutation(async (code) => getToken(code), {
     onSuccess: async (res) => {
       dispatch(setTokenAction(res));
+      navigate("/mypage");
     },
     onError: (err) => {
       console.log(err);
@@ -25,7 +27,7 @@ const KakaoRedirectHandler = () => {
 
   return (
     <div>
-      <Link to="/mypage">정보 확인</Link>
+      <h2>login...</h2>
     </div>
   );
 };
