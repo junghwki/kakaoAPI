@@ -1,15 +1,18 @@
 import React from "react";
 import Login from "./Login";
-import { useSelector } from "react-redux";
 import BookSearch from "./BookSearch";
+import styled from "styled-components";
+
+const MainStyleC = styled.div`
+  text-align: center;
+`;
 
 function Main() {
-  const data = useSelector((state) => state);
   return (
-    <>
+    <MainStyleC>
       <Login />
       <BookSearch />
-    </>
+    </MainStyleC>
   );
 }
 

@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const BookInfo = styled.div`
-  border: 3px black solid;
-  width: 45%;
+  border: 2px black solid;
+  border-radius: 5px;
+  width: 40%;
   margin: 1%;
 `;
 
