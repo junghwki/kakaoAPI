@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import getToken from "./query/getToken";
 import { useMutation } from "react-query";
 import { useDispatch } from "react-redux";
 import { setTokenAction } from "./redux/action";
 import { useNavigate } from "react-router-dom";
+
 const KakaoRedirectHandler = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
