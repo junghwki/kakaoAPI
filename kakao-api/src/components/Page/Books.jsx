@@ -2,10 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const BookInfo = styled.div`
-  text-align: left;
   border: 3px black solid;
-  width: 500px;
-  margin: 5px;
+  width: 45%;
+  margin: 1%;
 `;
 
 const Title = styled.div`
@@ -64,7 +63,8 @@ const Thumbnail = styled.img`
 `;
 
 function Books({ bookData }) {
-  if (!bookData.status || bookData.price < 0) return <></>;
+  if (!bookData.status || bookData.price < 0 || bookData.sale_price < 0)
+    return <></>;
   return (
     <BookInfo>
       <Title>

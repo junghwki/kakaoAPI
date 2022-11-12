@@ -5,6 +5,12 @@ import styled from "styled-components";
 import KakaoBookSearch from "../query/kakaoBookSearch";
 import Books from "./Books";
 
+const BookList = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
 function BookSearchResult() {
   const location = useLocation();
   const [queryData] = useState(location.state);
@@ -18,12 +24,12 @@ function BookSearchResult() {
 
   return (
     <div>
-      <div>
+      <Link to="/">Home</Link>
+      <BookList>
         {data.documents.map((book, index) => (
           <Books key={index} bookData={book} />
         ))}
-      </div>
-      <Link to="/">BookSearchResult</Link>
+      </BookList>
     </div>
   );
 }
